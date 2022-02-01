@@ -1,22 +1,21 @@
 .button {
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 16px;
-	line-height: 26px;
-	// text-align: center;
-	letter-spacing: 0.1em;
-}
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  a {
+    display: inline-block;
+    padding: 12px 60px;
+    text-decoration: none;
+    background: #86D3F4;
+    border: 2px solid black;
+    // max-width: 156px;
 
-.button a {
-	display: inline-block;
-	padding: 25px 40px;
-	text-decoration: none;
-	background: #34547a;
-
-	color: #fff;
-}
-
-.button :hover {
-	background: #4e8bd4;
+    color: black;
+    &:hover {
+      color: #86D3F4;
+      background-color: black;
+    }
+  }
 }

@@ -2,7 +2,7 @@ import "./../styles/button.scss";
 
 export interface Props {
   text: string;
-  onClick: React.MouseEventHandler;
+  onClick?: React.MouseEventHandler;
 }
 
 function Button(props: Props) {

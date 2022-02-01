@@ -19,14 +19,14 @@ function App() {
   const [modalActive, setModalActive] = useState(false);
   return (
     <div className="App">
-      <button
+      {/* <button
         onClick={() => {
           setModalActive(true);
         }}
       >
         SHOW POPUP
-      </button>
-      <Button text={"SHOW POPU"}
+      </button> */}
+      <Button text={"SHOW POPUP"}
         onClick={() => {
           setModalActive(true);
         }}></Button>

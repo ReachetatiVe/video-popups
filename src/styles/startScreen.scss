@@ -1,6 +1,7 @@
 .content {
   &__wrapper {
     max-width: 251px;
+    padding: 20px 10px 10px;
     text-align: center;
   }
   &__title {
@@ -8,10 +9,21 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-  
+    max-width: 231px;
+    margin: 0 auto;
   }
   &__image {
+    display: block;
+    margin: 20px auto;
+    height: 126px;
+    width: 126px;
   }
   &__text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    max-width: 126px;
+    margin: 0 auto 20px;
   }
 }
