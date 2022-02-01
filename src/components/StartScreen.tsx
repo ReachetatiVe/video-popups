@@ -1,5 +1,3 @@
-
-//? Почему нельзя импортировать с TS?
 import React from 'react';
 import "./../styles/startScreen.scss";
 import img from "./../assets/img/startScreen/qr_code.svg";

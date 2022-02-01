@@ -6,7 +6,7 @@ export interface Props {
   children: any;
 }
 
-function Modal(props: Props) {
+function Modal (props: Props) {
   return (
     <div
       className={props.active ? "modal active" : "modal"}
