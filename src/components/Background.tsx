@@ -1,4 +1,4 @@
-import './../styles/background.scss';
+// import './../styles/background.scss';
 
 function Background() {
   return (

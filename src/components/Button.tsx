@@ -1,7 +1,15 @@
-function Button() {
+import "./../styles/button.scss";
 
+export interface Props {
+  text: string;
+  onClick: React.MouseEventHandler;
+}
+
+function Button(props: Props) {
   return (
-    <div></div>
+    <div className="button" onClick={props.onClick}>
+		<a href='#'>{ props.text }</a>
+	</div>
   )
 }
 

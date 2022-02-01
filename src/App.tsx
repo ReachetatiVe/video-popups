@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Background from "./components/Background";
+import Button from "./components/Button";
 import Modal from "./components/Modal";
 import StartScreen from "./components/StartScreen";
 import "./styles/baseStyles.scss";
@@ -10,7 +11,7 @@ function App() {
       setWorked(true);
       setTimeout(() => {
         setModalActive(true);
-      }, 5000);
+      }, 2000);
     }
   });
 
@@ -25,6 +26,10 @@ function App() {
       >
         SHOW POPUP
       </button>
+      <Button text={"SHOW POPU"}
+        onClick={() => {
+          setModalActive(true);
+        }}></Button>
       <div className="container">
         <Background />
         <Modal active={modalActive} setActive={setModalActive}>
