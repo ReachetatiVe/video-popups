@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Background from "./components/Background";
-import Button from "./components/Button";
+import Button, { buttonType } from "./components/Button";
 import InputScreen from "./components/InputScreen";
 import Modal from "./components/Modal";
 import StartScreen from "./components/StartScreen";
@@ -28,7 +28,7 @@ function App() {
       >
         SHOW POPUP
       </button> */}
-      <Button
+      <Button  type={buttonType.banner}
         text={"SHOW POPUP"}
         onClick={() => {
           setModalActive(true);

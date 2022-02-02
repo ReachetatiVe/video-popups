@@ -4,12 +4,15 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  a {
+  &__link {
     display: inline-block;
     padding: 12px 60px;
     text-decoration: none;
     background: #86D3F4;
     border: 2px solid black;
+    &_calc{
+      padding: 12px 30px;
+    }
     // max-width: 156px;
 
     color: black;

@@ -1,7 +1,7 @@
 import React from 'react';
 import "./../styles/startScreen.scss";
 import img from "./../assets/img/startScreen/qr_code.svg";
-import Button from './Button';
+import Button, { buttonType } from './Button';
 
 export interface Props {
   setActive: Function;
@@ -21,7 +21,7 @@ function StartScreen(props:Props) {
         </div>
         <div className="content__text">Сканируйте QR-код или нажмите ОК</div>
         <div className="content__button">
-          <Button text='OK' onClick={() => {
+          <Button  type={buttonType.banner}text='OK' onClick={() => {
             props.setActive(false);
             props.setShowInputScreen(true);
           }}></Button>

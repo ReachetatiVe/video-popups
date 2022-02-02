@@ -1,5 +1,6 @@
 import "./../styles/inputScreen.scss";
-import Button from "./Button";
+import Button, { buttonType } from "./Button";
+import Keyboard from "./Keyboard";
 
 export interface Props {
   active: boolean;
@@ -19,7 +20,9 @@ const InputScreen = (props: Props) => {
             <div className="banner__text">
               и с Вами свяжется наш менеждер для дальнейшей консультации
             </div>
-            <div className="banner__button-block"></div>
+            <div className="banner__keyboard">
+            <Keyboard></Keyboard>
+            </div>
             <div className="banner__checkbox">
               <div className="checkbox">
                 <div className="checkbox__check"></div>
@@ -28,7 +31,7 @@ const InputScreen = (props: Props) => {
                 </div>
               </div>
             </div>
-            <Button text="подтвердить номер"></Button>
+            <Button type={buttonType.banner} text="подтвердить номер"></Button>
           </div>
         </div>
       </div>
