@@ -4,21 +4,14 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  &__link {
-    display: inline-block;
-    padding: 12px 60px;
-    text-decoration: none;
-    background: #86D3F4;
-    border: 2px solid black;
-    &_calc{
-      padding: 12px 30px;
-    }
-    // max-width: 156px;
+  display: inline-block;
+  text-decoration: none;
+  background: #86d3f4;
+  border: 2px solid black;
 
-    color: black;
-    &:hover {
-      color: #86D3F4;
-      background-color: black;
-    }
+  color: black;
+  &:hover {
+    color: #86d3f4;
+    background-color: black;
   }
 }

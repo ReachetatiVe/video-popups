@@ -9,6 +9,7 @@
   &__wrapper {
     position: relative;
     display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -37,3 +38,24 @@
     margin-bottom: 13px;
   }
 }
+
+.close-button {
+  background: white;
+  margin-right: 20px;
+  margin-top: 20px;
+  a {
+    display: block;
+    padding: 16px 33px;
+  }
+  &__image {
+    height: 22px;
+    width: 22px;
+    background: url("./../assets/img/closeButton/close.svg") center no-repeat;
+  }
+}
+
+// .button {
+//   &__link {
+//       padding: 12px 30px;
+//   }
+// }

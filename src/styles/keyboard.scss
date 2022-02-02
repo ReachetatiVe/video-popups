@@ -1,7 +1,18 @@
 .keyboard{
   display: flex;
   flex-wrap: wrap;
-  &__item{
-    flex: 30%;
+  .button{
+    display: block;
+    padding: 17px 0;
+    flex-basis: 25%;
+    flex-grow: 1;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    &:nth-last-child(2){
+      flex-basis: 60%;
+      // flex-grow: 2;
+    }
   }
 }
+
+
