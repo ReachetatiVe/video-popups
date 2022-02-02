@@ -10,9 +10,7 @@ export interface Props {
 function Modal(props: Props) {
   const setClassName = () => {
     let name:string = "modal";
-    if (props.position_left) {
-      name += " modal_left"
-    }
+    if (props.position_left) name += " modal_left"
     if (props.active) name += " active"
     return name;
   }

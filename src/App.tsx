@@ -28,16 +28,26 @@ function App() {
       >
         SHOW POPUP
       </button> */}
-      <Button text={"SHOW POPUP"}
+      <Button
+        text={"SHOW POPUP"}
         onClick={() => {
           setModalActive(true);
-        }}></Button>
+        }}
+      ></Button>
       <div className="container">
         <Background />
-        <Modal active={modalActive} setActive={setModalActive} position_left={true} >
-          <StartScreen setActive={setModalActive} />
+        <Modal active={modalActive} setActive={setModalActive}>
+          <StartScreen
+            setActive={setModalActive}
+            setShowInputScreen={setshowInputScreen}
+          />
         </Modal>
-        <InputScreen/>
+        {showInputScreen && (
+          <InputScreen
+            active={showInputScreen}
+            setActive={setshowInputScreen}
+          />
+        )}
       </div>
     </div>
   );

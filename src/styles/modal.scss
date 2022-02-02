@@ -10,6 +10,7 @@
   opacity: 0;
   pointer-events: none;
   transition: 0.5s;
+  z-index: 1000;
   &.modal_left{
     flex-direction: row;
   }
@@ -19,7 +20,6 @@
   }
   &__content{
     background-color: #86D3F4;
-    // width: 400px;
     transform: scale(0.5);
     transition: 0.4s all;
     &.active{

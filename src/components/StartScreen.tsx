@@ -5,6 +5,7 @@ import Button from './Button';
 
 export interface Props {
   setActive: Function;
+  setShowInputScreen: Function;
 }
 
 function StartScreen(props:Props) {
@@ -20,7 +21,10 @@ function StartScreen(props:Props) {
         </div>
         <div className="content__text">Сканируйте QR-код или нажмите ОК</div>
         <div className="content__button">
-          <Button text='OK' onClick={()=>props.setActive(false)}></Button>
+          <Button text='OK' onClick={() => {
+            props.setActive(false);
+            props.setShowInputScreen(true);
+          }}></Button>
         </div>
       </div>
     </div>
