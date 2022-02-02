@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Background from "./components/Background";
 import Button from "./components/Button";
+import InputScreen from "./components/InputScreen";
 import Modal from "./components/Modal";
 import StartScreen from "./components/StartScreen";
 import "./styles/baseStyles.scss";
@@ -17,6 +18,7 @@ function App() {
 
   const [isWorked, setWorked] = useState(false);
   const [modalActive, setModalActive] = useState(false);
+  const [showInputScreen, setshowInputScreen] = useState(false);
   return (
     <div className="App">
       {/* <button
@@ -32,9 +34,10 @@ function App() {
         }}></Button>
       <div className="container">
         <Background />
-        <Modal active={modalActive} setActive={setModalActive}>
-          <StartScreen />
+        <Modal active={modalActive} setActive={setModalActive} position_left={true} >
+          <StartScreen setActive={setModalActive} />
         </Modal>
+        <InputScreen/>
       </div>
     </div>
   );
