@@ -1,3 +1,5 @@
+import { observer } from "mobx-react-lite";
+import mobxStore from "../store/mobxStore";
 import { useEffect, useState } from "react";
 import "./../styles/inputScreen.scss";
 import Button from "./Button";
@@ -8,37 +10,7 @@ export interface Props {
   setActive: Function;
 }
 
-const InputScreen = (props: Props) => {
-  const [phoneNumber, setPhoneNumber] = useState("");
-
-  const getPhoneNumber = () => {
-    return phoneNumber;
-  }
-
-  const updateNumber = (value: string) => {
-    console.log(getPhoneNumber());
-    console.log("logvinov");
-    console.log(value);
-    switch (value) {
-      case "1":
-      case "2":
-      case "3":
-      case "4":
-      case "5":
-      case "6":
-      case "7":
-      case "8":
-      case "9":
-      case "0":
-        console.log(phoneNumber);
-        console.log("Я ебу коней");
-        setPhoneNumber(phoneNumber + value);
-        console.log(phoneNumber);
-        break;
-    }
-  };
-
-
+const InputScreen = observer((props: Props) => {
   return (
     <div className="input-screen">
       <div className="input-screen__wrapper">
@@ -48,13 +20,13 @@ const InputScreen = (props: Props) => {
               Введите ваш номер мобильного телефона
             </div>
             <div className="banner__phone">
-              {phoneNumber}
+              {mobxStore.getPhoneNumber()}
             </div>
             <div className="banner__text">
               и с Вами свяжется наш менеждер для дальнейшей консультации
             </div>
             <div className="banner__keyboard">
-              <Keyboard updateNumber={updateNumber}></Keyboard>
+              <Keyboard></Keyboard>
             </div>
             <div className="banner__checkbox">
               <div className="checkbox">
@@ -77,5 +49,5 @@ const InputScreen = (props: Props) => {
       </div>
     </div>
   );
-};
+});
 export default InputScreen;
