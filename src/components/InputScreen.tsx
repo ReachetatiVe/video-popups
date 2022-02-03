@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./../styles/inputScreen.scss";
 import Button from "./Button";
 import Keyboard from "./Keyboard";
@@ -6,16 +6,38 @@ import Keyboard from "./Keyboard";
 export interface Props {
   active: boolean;
   setActive: Function;
-  pressedKey: string;
 }
 
 const InputScreen = (props: Props) => {
+  const [phoneNumber, setPhoneNumber] = useState("");
 
-  useEffect(() => {
-    console.log(props.pressedKey);
-    props.pressedKey = "";
-    // console.log(props.pressedKey);
- })
+  const getPhoneNumber = () => {
+    return phoneNumber;
+  }
+
+  const updateNumber = (value: string) => {
+    console.log(getPhoneNumber());
+    console.log("logvinov");
+    console.log(value);
+    switch (value) {
+      case "1":
+      case "2":
+      case "3":
+      case "4":
+      case "5":
+      case "6":
+      case "7":
+      case "8":
+      case "9":
+      case "0":
+        console.log(phoneNumber);
+        console.log("Я ебу коней");
+        setPhoneNumber(phoneNumber + value);
+        console.log(phoneNumber);
+        break;
+    }
+  };
+
 
   return (
     <div className="input-screen">
@@ -26,15 +48,13 @@ const InputScreen = (props: Props) => {
               Введите ваш номер мобильного телефона
             </div>
             <div className="banner__phone">
-              <input type="text" />
-              {props.pressedKey}
-              {/* +7(___)___-__-__ */}
+              {phoneNumber}
             </div>
             <div className="banner__text">
               и с Вами свяжется наш менеждер для дальнейшей консультации
             </div>
             <div className="banner__keyboard">
-              <Keyboard></Keyboard>
+              <Keyboard updateNumber={updateNumber}></Keyboard>
             </div>
             <div className="banner__checkbox">
               <div className="checkbox">
@@ -50,8 +70,7 @@ const InputScreen = (props: Props) => {
         <div className="input-screen__info">
           <div className="close-button">
             <a href="">
-              <div className="close-button__image">
-              </div>
+              <div className="close-button__image"></div>
             </a>
           </div>
         </div>

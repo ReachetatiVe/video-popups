@@ -11,17 +11,12 @@ function App() {
   useEffect(() => {
     if (!isWorked) {
       setWorked(true);
-      window.addEventListener("keydown", (e) => {
-        console.log(e);
-        setPressedKey(e.key);
-      })
       setTimeout(() => {
         setModalActive(true);
       }, 2000);
     }
   });
 
-  const [pressedKey, setPressedKey] = useState("");
   const [isWorked, setWorked] = useState(false);
   const [modalActive, setModalActive] = useState(false);
   const [showInputScreen, setshowInputScreen] = useState(false);
@@ -48,7 +43,6 @@ function App() {
         </Modal>
         {showInputScreen && (
           <InputScreen
-            pressedKey={pressedKey}
             active={showInputScreen}
             setActive={setshowInputScreen}
           />
