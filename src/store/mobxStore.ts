@@ -9,16 +9,45 @@ class mobxStore {
     return instance;
   }
 
-  phoneNumber: string = "";
+  phoneNumber: string = "+7(___)___-__-__";
+  isValid: boolean = false;
 
   concatPhoneNumber(value: string) {
-    instance.phoneNumber += value;
-    console.log("new phoneNumver value: " + instance.phoneNumber);
+    for (let i = 0; i < instance.phoneNumber.length; i++) {
+      if (instance.phoneNumber[i] === "_") {
+        this.replaceAt(i, value, instance.phoneNumber);
+        break;
+      }
+    }
+    if (instance.phoneNumber[instance.phoneNumber.length-1] !== "_") instance.isValid = true;
+    else instance.isValid = false;
+  }
+
+  removeLastSymbol() {
+    for (let i = instance.phoneNumber.length - 1; i > 2; i--) {
+        console.log("Я СРАБОТАЛ");
+        if (instance.phoneNumber[i] !== "-" && instance.phoneNumber[i] !==")" && instance.phoneNumber[i] !=="_") {
+          console.log("index " + i);
+          console.log("elem " +instance.phoneNumber[i]);
+          this.replaceAt(i, '_', instance.phoneNumber);
+          break;
+        }
+    }
+    instance.isValid = false;
+  }
+
+  getIsValid() {
+    return instance.isValid;
   }
 
   getPhoneNumber() {
     return instance.phoneNumber;
   }
+
+  replaceAt(index:number, replacement:string, input:string) {
+    instance.phoneNumber = input.substr(0, index) + replacement + input.substr(index + replacement.length);
+  }
+
 }
 
 export default new mobxStore();

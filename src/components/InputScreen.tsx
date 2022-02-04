@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import "./../styles/inputScreen.scss";
 import Button from "./Button";
 import Keyboard from "./Keyboard";
+import PhoneInput from "react-phone-number-input/input";
 
 export interface Props {
   active: boolean;
@@ -11,6 +12,12 @@ export interface Props {
 }
 
 const InputScreen = observer((props: Props) => {
+  const setNumberColor = () => {
+    if (mobxStore.getIsValid()) return "banner__phone";
+    else return "banner__phone color_red";
+  }
+
+  // const [value, setValue]= useState();
   return (
     <div className="input-screen">
       <div className="input-screen__wrapper">
@@ -19,7 +26,8 @@ const InputScreen = observer((props: Props) => {
             <div className="banner__title">
               Введите ваш номер мобильного телефона
             </div>
-            <div className="banner__phone">
+            <div className={setNumberColor()}>
+              {/* <PhoneInput country="RU" value={mobxStore.getPhoneNumber()} onChange={mobxStore.concatPhoneNumber} /> */}
               {mobxStore.getPhoneNumber()}
             </div>
             <div className="banner__text">
@@ -36,7 +44,7 @@ const InputScreen = observer((props: Props) => {
                 </div>
               </div>
             </div>
-            <Button text="подтвердить номер"></Button>
+            <Button text="ПОДТВЕРДИТЬ НОМЕР"></Button>
           </div>
         </div>
         <div className="input-screen__info">

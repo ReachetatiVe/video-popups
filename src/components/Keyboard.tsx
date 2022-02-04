@@ -1,21 +1,22 @@
+//@ts-nocheck
 import Button from "./Button";
 import "./../styles/keyboard.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import mobxStore from "../store/mobxStore";
-import {observer} from "mobx-react-lite";
+import { observer } from "mobx-react-lite";
 
-export interface Props {
-  // updateNumber:Function;
-}
 
-const Keyboard = observer((props: Props) => {
+const Keyboard = observer(() => {
+  // const btnRef = useRef(null);
+  const [isWorked, setWorked] = useState(false);
+  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   useEffect(() => {
+    // console.log(btnRef);
     if (!isWorked) {
       setWorked(true);
+
       window.addEventListener("keydown", (e) => {
-        console.log(e);
-        // props.updateNumber(e.key);
         switch (e.key) {
           case "1":
           case "2":
@@ -29,23 +30,40 @@ const Keyboard = observer((props: Props) => {
           case "0":
             mobxStore.concatPhoneNumber(e.key);
             break;
-          default: return;
+          case "Backspace":
+            mobxStore.removeLastSymbol();
+            break;
         }
-      })
+      });
     }
   });
 
-  const [isWorked, setWorked] = useState(false);
-  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <div className="keyboard">
-      {array.map((el,index) => {
+      {array.map((el, index) => {
         return (
-          <Button text={String(el)} key={index}/>
+          <Button
+            text={String(el)}
+            key={index}
+            onClick={() => {
+              mobxStore.concatPhoneNumber(String(el));
+            }}
+            onKeyDown={(event) => {
+              console.log("Я ебал твою ass");
+              
+              if (event.keyCode === 37) {
+                console.log("Хуй влево");
+                
+              }
+              else if (event.keyCode === 39) {
+                console.log("Хуй вправо");
+              }
+            }}
+          />
         );
       })}
-        <Button text="Стереть" />
-        <Button text="0" />
+      <Button text="Стереть" onClick={() => mobxStore.removeLastSymbol()} />
+      <Button text="0" onClick={() => mobxStore.concatPhoneNumber("0")} />
     </div>
   );
 });
