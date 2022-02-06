@@ -1,4 +1,3 @@
-import check from "./../assets/img/checkbox/check.svg";
 import "./../styles/checkbox.scss";
 
 export interface Props {

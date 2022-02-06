@@ -1,4 +1,4 @@
-import { makeAutoObservable, makeObservable } from "mobx";
+import { makeAutoObservable} from "mobx";
 
 let instance: any;
 
@@ -10,7 +10,7 @@ class mobxStore {
   }
 
   phoneNumber: string = "+7(___)___-__-__";
-  isValid: boolean = false;
+  isValid: boolean = true;
 
   concatPhoneNumber(value: string) {
     for (let i = 0; i < instance.phoneNumber.length; i++) {
@@ -25,10 +25,7 @@ class mobxStore {
 
   removeLastSymbol() {
     for (let i = instance.phoneNumber.length - 1; i > 2; i--) {
-        console.log("Я СРАБОТАЛ");
         if (instance.phoneNumber[i] !== "-" && instance.phoneNumber[i] !==")" && instance.phoneNumber[i] !=="_") {
-          console.log("index " + i);
-          console.log("elem " +instance.phoneNumber[i]);
           this.replaceAt(i, '_', instance.phoneNumber);
           break;
         }

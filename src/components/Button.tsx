@@ -5,12 +5,12 @@ export interface Props {
   text: string;
   onClick?: React.MouseEventHandler;
   onKeyDown?: React.KeyboardEventHandler;
-  // ref?: React.;
+  isDisabled?: boolean;
 }
 
 const Button = React.forwardRef((props: Props, ref:any) => {
   return (
-    <a ref={ref} className="button" href="#" onClick={props.onClick} onKeyDown={props.onKeyDown}>
+    <a ref={ref} className={props.isDisabled? "button disabled":"button"} href="#" onClick={props.onClick} onKeyDown={props.onKeyDown}>
       {props.text}
     </a>
   );

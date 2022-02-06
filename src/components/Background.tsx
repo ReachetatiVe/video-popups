@@ -1,6 +1,12 @@
 // import './../styles/background.scss';
 
+import { useRef } from "react";
+
 function Background() {
+  const videoRef = useRef();
+
+  const pauseVideo = () => {
+  }
   return (
     <div className="backround">
       <div className="background__video">

@@ -8,8 +8,15 @@
   text-decoration: none;
   background: #86d3f4;
   border: 2px solid black;
-
   color: black;
+  &.disabled{
+    color: #4E4E4E;
+    border: 2px solid #4E4E4E;
+    &:hover {
+      color: #4E4E4E;
+      background-color: #86d3f4;
+    }
+  }
   &:hover {
     color: #86d3f4;
     background-color: black;

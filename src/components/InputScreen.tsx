@@ -4,6 +4,7 @@ import mobxStore from "../store/mobxStore";
 import "./../styles/inputScreen.scss";
 import Button from "./Button";
 import CheckBox from "./CheckBox";
+import CloseButton from "./CloseButton";
 import Keyboard from "./Keyboard";
 
 export interface Props {
@@ -19,7 +20,10 @@ const InputScreen = observer((props: Props) => {
     else return "banner__phone color_red";
   };
 
-  // const [value, setValue]= useState();
+  const checkValidation = () => {
+    // if ()
+  };
+
   return (
     <div className="input-screen">
       <div className="input-screen__wrapper">
@@ -36,16 +40,33 @@ const InputScreen = observer((props: Props) => {
               <Keyboard></Keyboard>
             </div>
             <div className="banner__checkbox">
-              <CheckBox text="Согласие на обработку персональных данных" active={isChecked} setActive={setChecked}></CheckBox>
+              {mobxStore.isValid ? (
+                <CheckBox
+                  text="Согласие на обработку персональных данных"
+                  active={isChecked}
+                  setActive={setChecked}
+                ></CheckBox>
+              ) : (
+                <div className="banner__label">Неверно введён номер</div>
+              )}
             </div>
-            <Button text="ПОДТВЕРДИТЬ НОМЕР"></Button>
+            {mobxStore.isValid && isChecked ? (
+              <Button
+                text="ПОДТВЕРДИТЬ НОМЕР"
+                onClick={() => console.log("plug")}
+              ></Button>
+            ) : (
+              <Button isDisabled={true} text="ПОДТВЕРДИТЬ НОМЕР"></Button>
+            )}
           </div>
         </div>
         <div className="input-screen__info">
-          <div className="close-button">
-            <a href="">
-              <div className="close-button__image"></div>
-            </a>
+          <CloseButton onClick={()=>{props.setActive(false)}}></CloseButton>
+          <div className="qr-info">
+            <div className="qr-info__text">
+              Сканируйте QR-код ДЛЯ ПОЛУЧЕНИЯ ДОПОЛНИТЕЛЬНОЙ ИНФОРМАЦИИ
+            </div>
+            <div className="qr-info__img"></div>
           </div>
         </div>
       </div>
