@@ -1,5 +1,4 @@
-
-
+import React from "react";
 import "./../styles/button.scss";
 
 export interface Props {
@@ -9,12 +8,12 @@ export interface Props {
   // ref?: React.;
 }
 
-function Button(props: Props) {
+const Button = React.forwardRef((props: Props, ref:any) => {
   return (
-    <a className="button" href="#" onClick={props.onClick} onKeyDown={props.onKeyDown}>
-        {props.text}
-      </a>
+    <a ref={ref} className="button" href="#" onClick={props.onClick} onKeyDown={props.onKeyDown}>
+      {props.text}
+    </a>
   );
-}
+});
 
 export default Button;

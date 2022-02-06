@@ -6,6 +6,7 @@ import InputScreen from "./components/InputScreen";
 import Modal from "./components/Modal";
 import StartScreen from "./components/StartScreen";
 import "./styles/baseStyles.scss";
+import FocusTrap from "focus-trap-react";
 
 function App() {
   useEffect(() => {
@@ -35,18 +36,22 @@ function App() {
       ></Button>
       <div className="container">
         <Background />
-        <Modal active={modalActive} setActive={setModalActive}>
-          <StartScreen
-            setActive={setModalActive}
-            setShowInputScreen={setshowInputScreen}
-          />
-        </Modal>
-        {showInputScreen && (
-          <InputScreen
-            active={showInputScreen}
-            setActive={setshowInputScreen}
-          />
-        )}
+        <FocusTrap>
+        <div>
+          <Modal active={modalActive} setActive={setModalActive}>
+            <StartScreen
+              setActive={setModalActive}
+              setShowInputScreen={setshowInputScreen}
+            />
+          </Modal>
+          {showInputScreen && (
+            <InputScreen
+              active={showInputScreen}
+              setActive={setshowInputScreen}
+            />
+          )}
+          </div>
+          </FocusTrap>
       </div>
     </div>
   );

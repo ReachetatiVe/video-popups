@@ -1,0 +1,30 @@
+.checkbox{
+  display: flex;
+  // justify-content: space-between;
+  &__check{
+    border: 2px solid black;
+    display: block;
+    height: 40px;
+    width: 40px;
+    &:focus{
+      box-shadow: 0 0 0 1px #30203d, 0 0 0 3px rgba(250, 242, 255, 1),
+      0 0 0 4px #30203d;
+    }
+  }
+  &__img__wrapper{
+    padding: 11px 7px;
+  }
+  &__img{
+    opacity: 0;
+    width: 24px;
+    height: 20px;
+    background: url("./../assets/img/checkbox/check.svg") center no-repeat;
+    &.active{
+      opacity: 1;
+    }
+  }
+  &__text{
+
+  }
+}
+
