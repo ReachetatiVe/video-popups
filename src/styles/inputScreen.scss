@@ -1,26 +1,4 @@
 .input-screen {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  user-select: none;
-  &__wrapper {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-  }
-  &__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-}
-
-.banner {
   // height: 100%;
   // height: 720px;
   text-align: center;
@@ -59,45 +37,6 @@
   .checkbox {
     margin-top: 22px;
     margin-bottom: 19px;
-  }
-}
-
-.close-button {
-  background: white;
-  margin-right: 20px;
-  margin-top: 20px;
-  width: 88px;
-  height: 52px;
-  a {
-    display: block;
-    padding: 16px 33px;
-  }
-  &__image {
-    height: 22px;
-    width: 22px;
-    background: url("./../assets/img/closeButton/close.svg") center no-repeat;
-  }
-}
-
-.qr-info {
-  display: flex;
-  align-items: center;
-  max-width: 314px;
-  margin-right: 40px;
-  margin-bottom: 40px;
-  &__img {
-    width: 110px;
-    height: 110px;
-    background: url("./../assets/img/qr-info/qr.svg") center no-repeat;
-  }
-  &__text {
-    max-width: 194px;
-    margin-right: 10px;
-    text-align: right;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    color: #fff;
   }
 }
 

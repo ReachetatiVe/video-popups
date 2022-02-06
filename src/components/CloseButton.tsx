@@ -3,13 +3,13 @@ export interface Props {
   onClick: React.MouseEventHandler;
 }
 
-const CloseButton = (props:Props) => {
+const CloseButton = (props: Props) => {
   return (
-<div className="close-button">
-            <a href="#" onClick={props.onClick}>
-              <div className="close-button__image"></div>
-            </a>
-          </div>
-  )
-}
+    <div className="close-button">
+      <a href="#" onClick={(props.onClick)}>
+        <div className="close-button__image"></div>
+      </a>
+    </div>
+  );
+};
 export default CloseButton;
