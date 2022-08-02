@@ -1,5 +1,5 @@
 <h2>Deployed version:</h2>
 https://videos-popups.vercel.app/#
-<h2>Description: </h2>
-The video plays in the background. After a few seconds, a popup appears with an offer to place an order. After that, it is proposed to enter a phone number with the correct format and submit the form.</br>
-Developed on React with TypeScript
+<h2>Описание: </h2>
+Видео воспроизводится в фоновом режиме. Через несколько секунд появляется всплывающее окно с предложением оформить заказ. После этого предлагается ввести номер телефона в правильном формате и отправить форму. Это можно сделать через клавиатуру, а также двигая фокус на </br>
+Разработано на React с использованием TypeScript
